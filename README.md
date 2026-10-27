@@ -1,15 +1,43 @@
-# SigmaOS-spreadsheet
+    # SigmaOS-spreadsheet
 
-Part of the SigmaOS multi-repository architecture.
+    CSV spreadsheet engine with formulas
 
-## Principles
-- MODULARITY: Single responsibility per repository
-- LOOSE COUPLING: Minimal dependencies between repos
-- INTERFACE SEGREGATION: Clear, focused public APIs
-- DETERMINISTIC TESTING: Comprehensive test coverage
+    Part of the **SigmaOS** sovereign operating-system ecosystem — a multi-repository
+    distribution modelled on Linux Mint and Omarchy Linux. See the parent
+    [`SigmaOS`](https://github.com/AaryanSinghChauhan09/SigmaOS) repository for the
+    full component index.
 
-## License
-SPDX-License-Identifier: GPL-3.0-or-later
+    ## Upstream inspirations
+    - native
 
-## Copyright
-Copyright (C) 2026 SigmaOS Project
+    ## Design principles applied
+    - **Defensive Programming**
+- **Fail-Fast**
+- **Least Astonishment**
+- **KISS**
+- **Separation of Concerns**
+- **Deterministic Testing**
+
+    ## Usage
+    Verbs: `load, set, eval, dump, sum`
+
+    ```
+    $ sigma-sheet set A1 10
+$ sigma-sheet set A2 32
+$ sigma-sheet set B1 "=A1 + A2"
+$ sigma-sheet eval B1
+42
+$ sigma-sheet sum A1:A2
+42
+$ sigma-sheet dump --out sheet.csv
+
+    ```
+
+    ## Build & test
+    ```
+    make build
+    make test
+    ```
+
+    ## Licence
+    GNU General Public License v3.0 (FOSS).
